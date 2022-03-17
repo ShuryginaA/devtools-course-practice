@@ -5,8 +5,8 @@
 #include "include/complex_number.h"
 
 TEST(ComplexNumberTest, Can_Get_Parts) {
-    double re = 0.0;
-    double im = 0.0;
+    double re = 2.0;
+    double im = 0.5;
     ComplexNumber z(re, im);
     EXPECT_EQ(re, z.getRe());
     EXPECT_EQ(im, z.getIm());
@@ -57,7 +57,7 @@ TEST(ComplexNumberTest, Can_Assign_Complex_Number) {
     double reFirst = 1.0;
     double imFirst = 0.5;
 
-    double reSecond = 0.0;
+    double reSecond = 3.0;
     double imSecond = 0.0;
 
     ComplexNumber numFirst(reFirst, imFirst);
