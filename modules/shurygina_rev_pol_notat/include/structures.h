@@ -24,7 +24,7 @@ class TStruct {
     virtual T pop() = 0;
     virtual bool isEmpty() = 0;
     virtual bool isFull() = 0;
-    virtual  ~TStruct() = 0;
+    virtual  ~TStruct() {}
 };
 
 #endif   // MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_STRUCTURES_H_
