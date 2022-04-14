@@ -138,6 +138,23 @@ TEST(PolishNotation, Check_Prioriry3) {
     EXPECT_EQ(l.prior(lex), 2);
 }
 
+TEST(PolishNotation, test_separat1) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "2+3/(4-1)*2";
+    ASSERT_NO_THROW(l1.separat(str2));
+}
+
+TEST(PolishNotation, test_separat2) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5+7";
+    ASSERT_NO_THROW(l1.separat(str2));
+}
+
+
 TEST(PolishNotation, polishNotation1) {
     PolishNotation l1;
     TQueue<Lexem*>* lex = new TQueue<Lexem*>;
