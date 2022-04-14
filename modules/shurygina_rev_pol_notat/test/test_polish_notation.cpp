@@ -4,6 +4,7 @@
 #include <string>
 #include "include/polish_notation.h"
 #include "include/queue.h"
+#include "include/stack.h"
 
 
 TEST(TQueue, can_create_queue_with_positive_length) {
@@ -65,6 +66,55 @@ TEST(Lexem, can_get_s) {
     Lexem l("2", value, 2);
     EXPECT_EQ(l.getS(), "2");
 }
+TEST(TStack, can_create_stack_with_positive_length)
+{
+    ASSERT_NO_THROW(TStack<int> s(5));
+}
+
+
+TEST(TMatrix, throws_when_create_stack_with_negative_length)
+{
+    ASSERT_ANY_THROW(TStack<int> s(-5));
+}
+
+TEST(TStack, can_create_copied_stack)
+{
+    TStruct<int>* s = new TStack<int>;
+
+    ASSERT_NO_THROW(TStruct<int>*s1(s));
+}
+
+TEST(TStack, can_push_and_pop)
+{
+    TStruct<int>* s = new TStack<int>;
+    s->push(3);
+    int t = s->pop();
+    EXPECT_EQ(3, t);
+
+}
+
+
+TEST(TStack, can_assign_stack_to_itself)
+{
+    TStruct<int>* s = new TStack<int>;
+    TStruct<int>* s1(s);
+    s = s;
+    EXPECT_EQ(s, s1);
+}
+
+
+TEST(TStack, check_void)
+{
+    TStruct<int>* s = new TStack<int>;
+    EXPECT_EQ(true, s->isEmpty());
+}
+TEST(TStack, check_fullness)
+{
+    TStruct<int>* s = new TStack<int>(1);
+    s->push(3);
+    EXPECT_EQ(true, s->isFull());
+}
+
 
 TEST(PolishNotation, Check_If_Numb_True) {
     PolishNotation l;
