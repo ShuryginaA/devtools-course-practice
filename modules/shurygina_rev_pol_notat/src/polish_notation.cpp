@@ -34,7 +34,7 @@ TQueue<Lexem*>* PolishNotation::separat(std::string _s) {
     char c;
     TQueue<Lexem*>* q = new TQueue<Lexem*>;
     State st = q0;
-    for (int i = 0; i < _s.length(); i++) {
+    for (size_t i = 0; i < _s.length(); i++) {
         c = _s[i];
         if (st == q0) {
             str = c;
@@ -67,7 +67,7 @@ TQueue<Lexem*>* PolishNotation::separat(std::string _s) {
 }
 std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
     TQueue<Lexem*>* q = new TQueue<Lexem*>;
-    TStruct<Lexem*>* stack = new TStack<Lexem*>;
+    TStack<Lexem*>* stack = new TStack<Lexem*>;
     Lexem* tmp;
     State st = q0;
     int count = 0;
