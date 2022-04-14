@@ -28,7 +28,6 @@ int PolishNotation::prior(Lexem tmp) {
         return 2;
 }
 
-int res(Lexem orr , Lexem ol, std::string mark);
 TQueue<Lexem*>* PolishNotation::separat(std::string _s) {
     std::string str;
     char c;
@@ -66,8 +65,8 @@ TQueue<Lexem*>* PolishNotation::separat(std::string _s) {
     return q;
 }
 std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
-    TQueue<Lexem*>* q = new TQueue<Lexem*>;
-    TStack<Lexem*>* stack = new TStack<Lexem*>;
+    TStruct<Lexem*>* q = new TQueue<Lexem*>;
+    TStruct<Lexem*>* stack = new TStack<Lexem*>;
     Lexem* tmp;
     State st = q0;
     int count = 0;

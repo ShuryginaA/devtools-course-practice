@@ -10,7 +10,6 @@ class PolishNotation {
  public:
     bool ifNumb(char c);
     int prior(Lexem tmp);
-    int res(Lexem orr , Lexem ol, std::string mark);
     TQueue<Lexem*>* separat(std::string _s);
     std::string revPolNot(TQueue<Lexem*>* q);
 };
