@@ -70,7 +70,7 @@ std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
     TStruct<Lexem*>* stack = new TStack<Lexem*>;
     Lexem* tmp;
     State st = q0;
-    int count = 0, count1 = 0;
+    int count = 0;
     while (!l->isEmpty()) {
         if (st == q0) {
             tmp = l->pop();
@@ -122,6 +122,8 @@ std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
     std::string s = "";
     while (!q->isEmpty())
         s += q->pop()->getS();
+    delete stack;
+    delete q;
     return s;
 }
 
