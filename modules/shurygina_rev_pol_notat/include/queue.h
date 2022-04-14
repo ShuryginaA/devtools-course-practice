@@ -3,7 +3,7 @@
 #ifndef   MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_QUEUE_H_
 #define   MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_QUEUE_H_
 #include<string>
-#include"Structures.h"
+#include"structures.h"
 
 template <class T>
 class TQueue : public TStruct<T> {
