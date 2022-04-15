@@ -7,6 +7,12 @@
 #include "include/stack.h"
 
 
+TEST(PolishNotation, Check_If_Numb_True_No_Throw) {
+    PolishNotation l;
+    char a = '5';
+    ASSERT_NO_THROW(l.ifNumb(a));
+}
+
 TEST(PolishNotation, Check_If_Numb_True) {
     PolishNotation l;
     char a = '5';
@@ -123,3 +129,14 @@ TEST(PolishNotation, polishNotation5) {
     result = l1.revPolNot(lex);
     EXPECT_EQ(result, "71+3-");
 }
+TEST(PolishNotation, polishNotation6) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5+4*2-5*7";
+    lex = l1.separat(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "542*+57*-");
+}
+
+
