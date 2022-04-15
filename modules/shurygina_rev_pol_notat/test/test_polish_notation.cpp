@@ -40,13 +40,13 @@ TEST(PolishNotation, Check_Prioriry3) {
 TEST(PolishNotation, Check_Prioriry4) {
     PolishNotation l;
     Lexem lex("/", op, -1);
-    ASSERT_NO_THROW(l.prior(lex), 1);
+    ASSERT_NO_THROW(l.prior(lex));
 }
 
 TEST(PolishNotation, Check_Prioriry5) {
     PolishNotation l;
     Lexem lex("-", op, -1);
-    ASSERT_NO_THROW(l.prior(lex), 2);
+    ASSERT_NO_THROW(l.prior(lex));
 }
 
 TEST(PolishNotation, test_separat1) {
@@ -71,8 +71,7 @@ TEST(PolishNotation, polishNotation0) {
     std::string result;
     std::string str2 = "2+3/(4-1)*2";
     lex = l1.separat(str2);
-    result = l1.revPolNot(lex);
-    ASSERT_NO_THROW(result, "2341-/2*+");
+    ASSERT_NO_THROW(l1.revPolNot(lex));
 }
 
 
