@@ -10,20 +10,22 @@ TEST(PolishNotation, Check_Queue1) {
     PolishNotation l1;
     TQueue<Lexem*>* lex = new TQueue<Lexem*>;
     ASSERT_NO_THROW(lex->isEmpty());
+    ASSERT_TRUE(lex->isEmpty());
 }
 
 TEST(PolishNotation, Check_Queue2) {
     PolishNotation l1;
     TQueue<Lexem*>* lex = new TQueue<Lexem*>;
     ASSERT_NO_THROW(lex->isFull());
+    ASSERT_FALSE(lex->isFull());
 }
 
 TEST(PolishNotation, Check_If_Numb_True_No_Throw) {
     PolishNotation l;
     char a = '5';
     ASSERT_NO_THROW(l.ifNumb(a));
+    ASSERT_TRUE(l.ifNumb(a));
 }
-
 TEST(PolishNotation, Check_If_Numb_True) {
     PolishNotation l;
     char a = '5';
