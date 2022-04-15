@@ -6,6 +6,19 @@
 #include "include/queue.h"
 #include "include/stack.h"
 
+TEST(PolishNotation, Check_Queue1) {
+
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    ASSERT_NO_THROW(lex->isEmpty());
+}
+
+TEST(PolishNotation, Check_Queue2) {
+
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    ASSERT_NO_THROW(lex->isFull());
+}
 
 TEST(PolishNotation, Check_If_Numb_True_No_Throw) {
     PolishNotation l;
