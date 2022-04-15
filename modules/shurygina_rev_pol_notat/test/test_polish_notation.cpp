@@ -22,7 +22,7 @@ TEST(PolishNotation, Check_Queue2) {
 
 TEST(PolishNotation, Check_If_Numb_True_Throw) {
     PolishNotation l;
-    char a = 'ô';
+    char a = 's';
     ASSERT_ANY_THROW(l.ifNumb(a));
 }
 
