@@ -170,4 +170,13 @@ TEST(PolishNotation, polishNotation6) {
     EXPECT_EQ(result, "542*+57*-");
 }
 
+TEST(PolishNotation, polishNotation7) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5+4*2-5*7-(3+6*5)/4";
+    lex = l1.separat(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "542*+57*-365*+4/-");
+}
 
