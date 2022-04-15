@@ -20,6 +20,12 @@ TEST(PolishNotation, Check_Queue2) {
     ASSERT_FALSE(lex->isFull());
 }
 
+TEST(PolishNotation, Check_If_Numb_True_Throw) {
+    PolishNotation l;
+    char a = 'ô';
+    ASSERT_ANY_THROW(l.ifNumb(a));
+}
+
 TEST(PolishNotation, Check_If_Numb_True_No_Throw) {
     PolishNotation l;
     char a = '5';
@@ -53,6 +59,18 @@ TEST(PolishNotation, Check_Prioriry2) {
 TEST(PolishNotation, Check_Prioriry3) {
     PolishNotation l;
     Lexem lex("+", op, -1);
+    EXPECT_EQ(l.prior(lex), 2);
+}
+
+TEST(PolishNotation, Check_Prioriry6) {
+    PolishNotation l;
+    Lexem lex(" ", op, -1);
+    EXPECT_EQ(l.prior(lex), -1);
+}
+
+TEST(PolishNotation, Check_Prioriry7) {
+    PolishNotation l;
+    Lexem lex("5", op, -1);
     EXPECT_EQ(l.prior(lex), 2);
 }
 
