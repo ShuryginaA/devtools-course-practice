@@ -8,6 +8,9 @@
 #include "include/stack.h"
 #include "include/queue.h"
 
+
+// check wheather a charackter is number or not
+
 bool PolishNotation::ifNumb(char c) {
     if ((c >= '0') && (c <= '9'))
         return true;
@@ -16,6 +19,8 @@ bool PolishNotation::ifNumb(char c) {
         throw std::string("Can't divide by zero");
     return false;
 }
+
+// find out the priority of operations
 
 int PolishNotation::prior(Lexem tmp) {
     if (tmp.getS() == " ")
@@ -27,6 +32,8 @@ int PolishNotation::prior(Lexem tmp) {
     else
         return 2;
 }
+
+// convert mat expresion into lexems array
 
 TQueue<Lexem*>* PolishNotation::separat(std::string _s) {
     std::string str;
@@ -64,6 +71,9 @@ TQueue<Lexem*>* PolishNotation::separat(std::string _s) {
 
     return q;
 }
+
+// polish notation method
+
 std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
     TStruct<Lexem*>* q = new TQueue<Lexem*>;
     TStruct<Lexem*>* stack = new TStack<Lexem*>;
