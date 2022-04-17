@@ -8,9 +8,9 @@
 
 class PolishNotation {
  public:
-    bool ifNumb(char c);
-    int prior(Lexem tmp);
-    TQueue<Lexem*>* separat(std::string _s);
+    bool ifNumber(char c);
+    int priority(Lexem tmp);
+    TQueue<Lexem*>* separatExpressionOnLexems(std::string _s);
     std::string revPolNot(TQueue<Lexem*>* q);
 };
 #endif  //  MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_POLISH_NOTATION_H_
