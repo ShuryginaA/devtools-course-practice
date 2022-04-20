@@ -49,8 +49,7 @@ TQueue<Lexem*>* PolishNotation::separatExpressionOnLexems(std::string _s) {
 
             if (!ifNumber(c))
                 q->push(new Lexem(str, op, -1));
-        }
-        else {
+        } else {
             if (st == q1) {
                 if (ifNumber(c))
                     str += c;
@@ -84,21 +83,17 @@ std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
     while (!l->isEmpty()) {
         if (st == q0) {
             tmp = l->pop();
-            if (tmp->getS() == "(")
+            if (tmp->getS() == "(") {
                 stack->push(tmp);
-            else
-                if (tmp->getS() == ")") {
+            } else if (tmp->getS() == ")") {
                     st = q1;
-                }
-                else if (tmp->getType() == value) {
+                } else if (tmp->getType() == value) {
                     int val_ = atoi(tmp->getS().c_str());
                     q->push(new Lexem(tmp->getS(), value, val_));
-                }
-                else if (priority(*tmp) >= 1) {
+                } else if (priority(*tmp) >= 1) {
                     if (stack->isEmpty()) {
                         stack->push(tmp);
-                    }
-                    else {
+                    } else {
                         Lexem* ltmp = stack->pop();
                         while (!stack->isEmpty() && priority(*ltmp)
                             <= priority(*tmp) && priority(*ltmp) != 0) {
@@ -111,8 +106,7 @@ std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
                                 q->push(new Lexem(ltmp->getS(), op, -1));
                             else
                                 stack->push(ltmp);
-                        }
-                        else {
+                        } else {
                             if (count == 0)
                                 stack->push(ltmp);
                         }
