@@ -19,6 +19,77 @@ TEST(PolishNotation, Check_Queue2) {
     ASSERT_NO_THROW(lex->isFull());
     ASSERT_FALSE(lex->isFull());
 }
+TEST(TQueue, can_create_queue_with_positive_length) {
+    ASSERT_NO_THROW(TQueue<int> s(5));
+}
+
+
+TEST(TQueue, throws_when_create_queue_with_negative_length) {
+    ASSERT_ANY_THROW(TQueue<int> s(-5));
+}
+
+TEST(TQueue, can_create_copied_queue) {
+    TStruct<int>* s = new TQueue<int>;
+
+    ASSERT_NO_THROW(TStruct<int>*s1(s));
+}
+
+TEST(TQueue, can_push_and_pop) {
+    TStruct<int>* s = new TQueue<int>;
+    s->push(3);
+    int t = s->pop();
+    EXPECT_EQ(3, t);
+}
+
+
+TEST(TQueue, can_assign_queue_to_itself) {
+    TStruct<int>* s = new TQueue<int>;
+    TStruct<int>* s1(s);
+    s = s;
+    EXPECT_EQ(s, s1);
+}
+TEST(TStack, can_create_stack_with_positive_length) {
+    ASSERT_NO_THROW(TStack<int> s(5));
+}
+
+
+TEST(TMatrix, throws_when_create_stack_with_negative_length) {
+    ASSERT_ANY_THROW(TStack<int> s(-5));
+}
+
+TEST(TStack, can_create_copied_stack) {
+    TStruct<int>* s = new TStack<int>;
+
+    ASSERT_NO_THROW(TStruct<int>*s1(s));
+}
+
+TEST(TStack, can_push_and_pop) {
+    TStruct<int>* s = new TStack<int>;
+    s->push(3);
+    int t = s->pop();
+    EXPECT_EQ(3, t);
+}
+
+
+TEST(TStack, can_assign_stack_to_itself) {
+    TStruct<int>* s = new TStack<int>;
+    TStruct<int>* s1(s);
+    s = s;
+    EXPECT_EQ(s, s1);
+}
+
+
+TEST(TStack, check_void) {
+    TStruct<int>* s = new TStack<int>;
+    EXPECT_EQ(true, s->isEmpty());
+}
+TEST(TStack, check_fullness) {
+    TStruct<int>* s = new TStack<int>(1);
+    s->push(3);
+    EXPECT_EQ(true, s->isFull());
+}
+
+
 
 TEST(PolishNotation, Check_If_Numb_True_Throw) {
     PolishNotation l;
