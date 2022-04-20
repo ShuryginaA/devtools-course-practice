@@ -19,6 +19,11 @@ TEST(PolishNotation, Check_Queue2) {
     ASSERT_NO_THROW(lex->isFull());
     ASSERT_FALSE(lex->isFull());
 }
+TEST(Lexem, can_create) {
+    ASSERT_NO_THROW(new Lexem("/", op, -1));
+    ASSERT_NO_THROW(new Lexem("5", value, 5));
+}
+
 TEST(TQueue, can_create_queue_with_positive_length) {
     ASSERT_NO_THROW(TQueue<int> s(5));
 }
@@ -32,6 +37,11 @@ TEST(TQueue, can_create_copied_queue) {
     TStruct<int>* s = new TQueue<int>;
 
     ASSERT_NO_THROW(TStruct<int>*s1(s));
+}
+
+TEST(Lexem, can_get_value) {
+    Lexem l("/", op, -1);
+    ASSERT_NO_THROW(l.getVal());
 }
 
 TEST(TQueue, can_push_and_pop) {
