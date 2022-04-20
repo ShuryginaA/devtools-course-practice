@@ -120,3 +120,89 @@ TEST(PolishNotation, test_separat2) {
     ASSERT_NO_THROW(l1.separatExpressionOnLexems(str2));
 }
 
+TEST(PolishNotation, polishNotation1) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "2+3/(4-1)*2";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "2341-/2*+");
+}
+
+TEST(PolishNotation, polishNotation2) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5-3/(4+1)*2";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "5341+/2*-");
+}
+
+TEST(PolishNotation, polishNotation3) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5+4*3";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "543*+");
+}
+
+TEST(PolishNotation, polishNotation4) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "6-1+3";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "61-3+");
+}
+TEST(PolishNotation, polishNotation5) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "7+1-3";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "71+3-");
+}
+TEST(PolishNotation, polishNotation6) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5+4*2-5*7";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "542*+57*-");
+}
+
+TEST(PolishNotation, polishNotation7) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "5+4*2-5*7-(3+6*5)/4";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "542*+57*-365*+4/-");
+}
+
+TEST(PolishNotation, polishNotation8) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "54+4*2-5*71-(3+6*5)/4";
+    lex = l1.separatExpressionOnLexems(str2);
+    result = l1.revPolNot(lex);
+    EXPECT_EQ(result, "5442*+571*-365*+4/-");
+}
+
+TEST(PolishNotation, polishNotation0) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    std::string result;
+    std::string str2 = "2+3/(4-1)*2";
+    lex = l1.separatExpressionOnLexems(str2);
+    ASSERT_NO_THROW(l1.revPolNot(lex));
+}
