@@ -49,10 +49,21 @@ TEST(PolishNotation, Check_Prioriry1) {
     Lexem lex("(", op, -1);
     EXPECT_EQ(l.priority(lex), 0);
 }
+TEST(PolishNotation, Check_Prioriry0) {
+    PolishNotation l;
+    Lexem lex(")", op, -1);
+    EXPECT_EQ(l.priority(lex), 0);
+}
 
 TEST(PolishNotation, Check_Prioriry2) {
     PolishNotation l;
     Lexem lex("*", op, -1);
+    EXPECT_EQ(l.priority(lex), 1);
+}
+
+TEST(PolishNotation, Check_Prioriry22) {
+    PolishNotation l;
+    Lexem lex("/", op, -1);
     EXPECT_EQ(l.priority(lex), 1);
 }
 
