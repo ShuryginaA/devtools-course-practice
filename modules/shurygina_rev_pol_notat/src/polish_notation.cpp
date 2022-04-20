@@ -49,7 +49,8 @@ TQueue<Lexem*>* PolishNotation::separatExpressionOnLexems(std::string _s) {
 
             if (!ifNumber(c))
                 q->push(new Lexem(str, op, -1));
-        } else {
+        }
+        else {
             if (st == q1) {
                 if (ifNumber(c))
                     str += c;
