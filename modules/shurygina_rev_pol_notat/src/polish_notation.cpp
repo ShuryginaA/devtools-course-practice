@@ -2,7 +2,6 @@
 
 #include <string>
 #include <stack>
-
 #include "include/polish_notation.h"
 #include "include/lexem.h"
 #include "include/stack.h"

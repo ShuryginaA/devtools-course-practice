@@ -5,6 +5,7 @@
 #include "include/polish_notation.h"
 #include "include/queue.h"
 #include "include/stack.h"
+#include"include/structures.h"
 
 TEST(PolishNotation, Check_Queue1) {
     PolishNotation l1;
