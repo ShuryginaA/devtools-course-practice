@@ -4,7 +4,6 @@
 #define  MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_LEXEM_H_
 
 #include <string>
-#include "include/queue.h"
 enum Type {
     op, value
 };

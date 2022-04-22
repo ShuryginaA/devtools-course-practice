@@ -5,7 +5,6 @@
 #include "include/polish_notation.h"
 #include "include/lexem.h"
 #include "include/stack.h"
-#include "include/queue.h"
 
 
 // check wheather a charackter is number or not

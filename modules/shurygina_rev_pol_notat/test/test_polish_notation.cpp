@@ -3,7 +3,6 @@
 #include <gtest/gtest.h>
 #include <string>
 #include "include/polish_notation.h"
-#include "include/queue.h"
 #include "include/stack.h"
 #include "include/structures.h"
 
