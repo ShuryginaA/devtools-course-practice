@@ -11,18 +11,24 @@ TEST(PolishNotation, Check_Queue1) {
     PolishNotation l1;
     TQueue<Lexem*>* lex = new TQueue<Lexem*>;
     ASSERT_NO_THROW(lex->isEmpty());
-    ASSERT_TRUE(lex->isEmpty());
+    EXPECT_EQ(lex->isEmpty(),true);
 }
 
 TEST(PolishNotation, Check_Queue2) {
     PolishNotation l1;
     TQueue<Lexem*>* lex = new TQueue<Lexem*>;
     ASSERT_NO_THROW(lex->isFull());
-    ASSERT_FALSE(lex->isFull());
+    EXPECT_EQ(lex->isFull(),false);
 }
 TEST(Lexem, can_create) {
     ASSERT_NO_THROW(new Lexem("/", op, -1));
     ASSERT_NO_THROW(new Lexem("5", value, 5));
+}
+
+TEST(TQueue, can_pop) {
+    TQueue<int> q(10);
+    q.push(6);
+    EXPECT_EQ(q.pop(),6);
 }
 
 TEST(TQueue, can_create_queue_with_positive_length) {
