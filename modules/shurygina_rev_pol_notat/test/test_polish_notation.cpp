@@ -125,13 +125,6 @@ TEST(PolishNotation, Check_If_Numb_False1) {
     EXPECT_EQ(l.ifNumber(a), false);
 }
 
-TEST(Lexem, Check_Lex) {
-    Lexem lex1("(", op, -1);
-    Lexem lex2("(", op, -1);
-    EXPECT_EQ(lex1, lex2);
-}
-
-
 TEST(PolishNotation, Check_Prioriry1) {
     PolishNotation l;
     Lexem lex("(", op, -1);
