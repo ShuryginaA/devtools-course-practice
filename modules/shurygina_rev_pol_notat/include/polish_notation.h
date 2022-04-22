@@ -5,6 +5,7 @@
 
 #include <string>
 #include "include/lexem.h"
+#include "include/stack.h"
 
 class PolishNotation {
  public:
