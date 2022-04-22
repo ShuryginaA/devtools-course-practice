@@ -75,7 +75,6 @@ class TQueue {
     int N;
     int first;
     int last;
-    int next(int ind) { return (ind + 1) % N; }
  public:
     explicit TQueue(int _N = 100);
     TQueue(const TQueue& v);
@@ -84,6 +83,7 @@ class TQueue {
     T pop();
     bool isFull();
     bool isEmpty();
+    int next(int ind) { return (ind + 1) % N; }
 };
 
 template<class T>

@@ -53,7 +53,11 @@ TEST(TStack, check_fullness) {
     s->push(3);
     EXPECT_EQ(true, s->isFull());
 }
-
+TEST(PolishNotation, Check_If_Numb_True_Throw) {
+    PolishNotation l;
+    char a = 's';
+    ASSERT_ANY_THROW(l.ifNumber(a));
+}
 TEST(PolishNotation, Check_If_Numb_True_No_Throw) {
     PolishNotation l;
     char a = '5';

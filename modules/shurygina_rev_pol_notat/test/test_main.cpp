@@ -35,10 +35,9 @@ TEST(TQueue, can_assign_queue_to_itself) {
 }
 
 TEST(TQueue, Check_Queue1) {
-    PolishNotation l1;
-    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
-    ASSERT_NO_THROW(lex->isEmpty());
-    EXPECT_EQ(lex->isEmpty(), true);
+    TQueue<int> s(1);
+    ASSERT_NO_THROW(s.isEmpty());
+    EXPECT_EQ(s.isEmpty(), true);
 }
 
 TEST(TQueue, Check_Queue2) {
@@ -46,6 +45,11 @@ TEST(TQueue, Check_Queue2) {
     TQueue<Lexem*>* lex = new TQueue<Lexem*>;
     ASSERT_NO_THROW(lex->isFull());
     EXPECT_EQ(lex->isFull(), false);
+}
+
+TEST(TQueue, next) {
+    TQueue<int> s(1);
+    EXPECT_EQ(s.next(0), 0);
 }
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
