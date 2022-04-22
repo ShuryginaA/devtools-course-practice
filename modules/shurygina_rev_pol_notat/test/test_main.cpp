@@ -14,11 +14,6 @@ TEST(TQueue, can_create_queue_with_positive_length) {
     ASSERT_NO_THROW(TQueue<int> s(5));
 }
 
-
-TEST(TQueue, throws_when_create_queue_with_negative_length) {
-    ASSERT_ANY_THROW(TQueue<int> s(-5));
-}
-
 TEST(TQueue, can_create_copied_queue) {
     TQueue<int>* s = new TQueue<int>;
 

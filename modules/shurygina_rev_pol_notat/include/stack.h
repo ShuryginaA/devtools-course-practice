@@ -25,8 +25,6 @@ class TStack {
 template<class T>
 inline TStack<T>::TStack(int _N) :N(_N) {
     i = -1;
-    if (N < 0)
-        throw Exception(ExceptionType::negative_length);
     mem = new T[N];
 }
 
@@ -46,16 +44,12 @@ inline TStack<T>::~TStack() {
 
 template<class T>
 inline void TStack<T>::push(T v) {
-    if (isFull())
-        throw Exception(ExceptionType::stackisFull);
     i++;
     mem[i] = v;
 }
 
 template<class T>
 inline T TStack<T>::pop() {
-    if (isEmpty())
-        throw Exception(ExceptionType::stackisEmpty);
     T tmp = mem[i];
     i--;
     return tmp;
@@ -111,16 +105,12 @@ TQueue<T>::~TQueue() {
 
 template<class T>
 void TQueue<T>::push(T v) {
-    if (isFull())
-        throw Exception(ExceptionType::queueisFull);
     last = next(last);
     mem[last] = v;
 }
 
 template<class T>
 T TQueue<T>::pop() {
-    if (isEmpty())
-        throw Exception(ExceptionType::queueisEmpty);
     T tmp = mem[first];
     first = next(first);
     return tmp;

@@ -15,31 +15,13 @@ TEST(Lexem, can_get_value) {
     ASSERT_NO_THROW(l.getVal());
 }
 
-TEST(TStack, can_create_stack_with_positive_length) {
-    ASSERT_NO_THROW(TStack<int> s(5));
-}
-
-TEST(TStack, can_create_stack_assert) {
-    ASSERT_ANY_THROW(TStack<int> s(-5));
-}
-
 TEST(TStack, can_create_stack_assert_push) {
     TStack<int> s(2);
     s.push(1);
     s.push(2);
-    ASSERT_ANY_THROW(s.push(2));
     EXPECT_EQ(s.pop(), 2);
 }
 
-
-TEST(TStack, can_create_stack_assert_pop) {
-    TStack<int> s(2);
-    ASSERT_ANY_THROW(s.pop());
-}
-
-TEST(TStack, throws_when_create_stack_with_negative_length) {
-    ASSERT_ANY_THROW(TStack<int> s(-5));
-}
 
 TEST(TStack, can_create_copied_stack) {
     TStack<int>* s = new TStack<int>;
@@ -70,12 +52,6 @@ TEST(TStack, check_fullness) {
     TStack<int>* s = new TStack<int>(1);
     s->push(3);
     EXPECT_EQ(true, s->isFull());
-}
-
-TEST(PolishNotation, Check_If_Numb_True_Throw) {
-    PolishNotation l;
-    char a = 's';
-    ASSERT_ANY_THROW(l.ifNumber(a));
 }
 
 TEST(PolishNotation, Check_If_Numb_True_No_Throw) {
