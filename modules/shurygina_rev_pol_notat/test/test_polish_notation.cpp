@@ -69,6 +69,22 @@ TEST(TStack, can_create_stack_with_positive_length) {
     ASSERT_NO_THROW(TStack<int> s(5));
 }
 
+TEST(TStack, can_create_stack_assert) {
+    ASSERT_ANY_THROW(TStack<int> s(-5));
+}
+
+TEST(TStack, can_create_stack_assert_push) {
+    TStack<int> s(2);
+    s.push(1);
+    s.push(2);
+    ASSERT_ANY_THROW(s.push(2));
+}
+
+
+TEST(TStack, can_create_stack_assert_pop) {
+    TStack<int> s(2);
+    ASSERT_ANY_THROW(s.pop());
+}
 
 TEST(TMatrix, throws_when_create_stack_with_negative_length) {
     ASSERT_ANY_THROW(TStack<int> s(-5));
