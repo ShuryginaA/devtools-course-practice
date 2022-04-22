@@ -4,7 +4,6 @@
 #define  MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_STACK_H_
 
 #include<string>
-#include "include/structures.h"
 
 template <class T>
 class TStack {
