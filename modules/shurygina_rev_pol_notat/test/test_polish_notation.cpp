@@ -5,19 +5,6 @@
 #include "include/polish_notation.h"
 #include "include/stack.h"
 
-TEST(PolishNotation, Check_Queue1) {
-    PolishNotation l1;
-    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
-    ASSERT_NO_THROW(lex->isEmpty());
-    EXPECT_EQ(lex->isEmpty(), true);
-}
-
-TEST(PolishNotation, Check_Queue2) {
-    PolishNotation l1;
-    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
-    ASSERT_NO_THROW(lex->isFull());
-    EXPECT_EQ(lex->isFull(), false);
-}
 TEST(Lexem, can_create) {
     ASSERT_NO_THROW(new Lexem("/", op, -1));
     ASSERT_NO_THROW(new Lexem("5", value, 5));
@@ -28,12 +15,6 @@ TEST(Lexem, can_get_value) {
     ASSERT_NO_THROW(l.getVal());
 }
 
-TEST(TQueue, can_assign_queue_to_itself) {
-    TQueue<int>* s = new TQueue<int>;
-    TQueue<int>* s1(s);
-    s = s;
-    EXPECT_EQ(s, s1);
-}
 TEST(TStack, can_create_stack_with_positive_length) {
     ASSERT_NO_THROW(TStack<int> s(5));
 }
@@ -47,6 +28,7 @@ TEST(TStack, can_create_stack_assert_push) {
     s.push(1);
     s.push(2);
     ASSERT_ANY_THROW(s.push(2));
+    EXPECT_EQ(s.pop(), 2);
 }
 
 
@@ -55,7 +37,7 @@ TEST(TStack, can_create_stack_assert_pop) {
     ASSERT_ANY_THROW(s.pop());
 }
 
-TEST(TMatrix, throws_when_create_stack_with_negative_length) {
+TEST(TStack, throws_when_create_stack_with_negative_length) {
     ASSERT_ANY_THROW(TStack<int> s(-5));
 }
 
@@ -80,7 +62,6 @@ TEST(TStack, can_assign_stack_to_itself) {
     EXPECT_EQ(s, s1);
 }
 
-
 TEST(TStack, check_void) {
     TStack<int>* s = new TStack<int>;
     EXPECT_EQ(true, s->isEmpty());
@@ -90,8 +71,6 @@ TEST(TStack, check_fullness) {
     s->push(3);
     EXPECT_EQ(true, s->isFull());
 }
-
-
 
 TEST(PolishNotation, Check_If_Numb_True_Throw) {
     PolishNotation l;

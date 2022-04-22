@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 #include "include/stack.h"
-
+#include"include/polish_notation.h"
 
 TEST(TQueue, can_pop) {
     TQueue<int> q(10);
@@ -30,6 +30,27 @@ TEST(TQueue, can_push_and_pop) {
     s->push(3);
     int t = s->pop();
     EXPECT_EQ(3, t);
+}
+
+TEST(TQueue, can_assign_queue_to_itself) {
+    TQueue<int>* s = new TQueue<int>;
+    TQueue<int>* s1(s);
+    s = s;
+    EXPECT_EQ(s, s1);
+}
+
+TEST(TQueue, Check_Queue1) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    ASSERT_NO_THROW(lex->isEmpty());
+    EXPECT_EQ(lex->isEmpty(), true);
+}
+
+TEST(TQueue, Check_Queue2) {
+    PolishNotation l1;
+    TQueue<Lexem*>* lex = new TQueue<Lexem*>;
+    ASSERT_NO_THROW(lex->isFull());
+    EXPECT_EQ(lex->isFull(), false);
 }
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
