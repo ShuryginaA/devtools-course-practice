@@ -25,39 +25,10 @@ TEST(Lexem, can_create) {
     ASSERT_NO_THROW(new Lexem("5", value, 5));
 }
 
-TEST(TQueue, can_pop) {
-    TQueue<int> q(10);
-    q.push(6);
-    EXPECT_EQ(q.pop(), 6);
-}
-
-TEST(TQueue, can_create_queue_with_positive_length) {
-    ASSERT_NO_THROW(TQueue<int> s(5));
-}
-
-
-TEST(TQueue, throws_when_create_queue_with_negative_length) {
-    ASSERT_ANY_THROW(TQueue<int> s(-5));
-}
-
-TEST(TQueue, can_create_copied_queue) {
-    TStruct<int>* s = new TQueue<int>;
-
-    ASSERT_NO_THROW(TStruct<int>*s1(s));
-}
-
 TEST(Lexem, can_get_value) {
     Lexem l("/", op, -1);
     ASSERT_NO_THROW(l.getVal());
 }
-
-TEST(TQueue, can_push_and_pop) {
-    TStruct<int>* s = new TQueue<int>;
-    s->push(3);
-    int t = s->pop();
-    EXPECT_EQ(3, t);
-}
-
 
 TEST(TQueue, can_assign_queue_to_itself) {
     TStruct<int>* s = new TQueue<int>;
@@ -152,6 +123,12 @@ TEST(PolishNotation, Check_If_Numb_False1) {
     PolishNotation l;
     char a = '/';
     EXPECT_EQ(l.ifNumber(a), false);
+}
+
+TEST(Lexem, Check_Lex) {
+    Lexem lex1("(", op, -1);
+    Lexem lex2("(", op, -1);
+    EXPECT_EQ(lex1, lex2);
 }
 
 
