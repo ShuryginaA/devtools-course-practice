@@ -4,6 +4,20 @@
 #define  MODULES_SHURYGINA_REV_POL_NOTAT_INCLUDE_LEXEM_H_
 
 #include <string>
+
+enum class ExceptionType {
+    stackisFull,
+    queueisFull,
+    stackisEmpty,
+    queueisEmpty,
+    unidentified_symbol,
+    negative_length
+};
+struct Exception {
+    ExceptionType error;
+    explicit Exception(ExceptionType _error) { error = _error; }
+};
+
 enum Type {
     op, value
 };
