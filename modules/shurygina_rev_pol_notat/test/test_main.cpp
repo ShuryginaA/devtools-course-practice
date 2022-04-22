@@ -1,7 +1,7 @@
 // Copyright 2022 Shurygina A
 
 #include <gtest/gtest.h>
-#include "include/queue.h"
+#include "include/stack.h"
 
 
 TEST(TQueue, can_pop) {
