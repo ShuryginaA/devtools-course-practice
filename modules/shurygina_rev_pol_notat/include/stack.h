@@ -82,7 +82,7 @@ class TQueue : public TStruct<T> {
     int first;
     int last;
     int next(int ind) { return (ind + 1) % N; }
-public:
+ public:
     explicit TQueue(int _N = 100);
     TQueue(const TQueue& v);
     ~TQueue();
