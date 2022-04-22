@@ -7,7 +7,7 @@
 #include "include/structures.h"
 
 template <class T>
-class TStack : public TStruct<T> {
+class TStack {
     T* mem;
     int N;
     int i;
@@ -76,7 +76,7 @@ TStack<T>& TStack<T>::operator=(const TStack& v) {
 }
 
 template <class T>
-class TQueue : public TStruct<T> {
+class TQueue {
     T* mem;
     int N;
     int first;

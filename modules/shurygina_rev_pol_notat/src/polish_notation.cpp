@@ -73,8 +73,8 @@ TQueue<Lexem*>* PolishNotation::separatExpressionOnLexems(std::string _s) {
 // polish notation method
 
 std::string PolishNotation::revPolNot(TQueue<Lexem*>* l) {
-    TStruct<Lexem*>* q = new TQueue<Lexem*>;
-    TStruct<Lexem*>* stack = new TStack<Lexem*>;
+    TQueue<Lexem*>* q = new TQueue<Lexem*>;
+    TStack<Lexem*>* stack = new TStack<Lexem*>;
     Lexem* tmp;
     State st = q0;
     int count = 0;

@@ -30,8 +30,8 @@ TEST(Lexem, can_get_value) {
 }
 
 TEST(TQueue, can_assign_queue_to_itself) {
-    TStruct<int>* s = new TQueue<int>;
-    TStruct<int>* s1(s);
+    TQueue<int>* s = new TQueue<int>;
+    TQueue<int>* s1(s);
     s = s;
     EXPECT_EQ(s, s1);
 }
@@ -61,13 +61,13 @@ TEST(TMatrix, throws_when_create_stack_with_negative_length) {
 }
 
 TEST(TStack, can_create_copied_stack) {
-    TStruct<int>* s = new TStack<int>;
+    TStack<int>* s = new TStack<int>;
 
-    ASSERT_NO_THROW(TStruct<int>*s1(s));
+    ASSERT_NO_THROW(TStack<int>*s1(s));
 }
 
 TEST(TStack, can_push_and_pop) {
-    TStruct<int>* s = new TStack<int>;
+    TStack<int>* s = new TStack<int>;
     s->push(3);
     int t = s->pop();
     EXPECT_EQ(3, t);
@@ -75,19 +75,19 @@ TEST(TStack, can_push_and_pop) {
 
 
 TEST(TStack, can_assign_stack_to_itself) {
-    TStruct<int>* s = new TStack<int>;
-    TStruct<int>* s1(s);
+    TStack<int>* s = new TStack<int>;
+    TStack<int>* s1(s);
     s = s;
     EXPECT_EQ(s, s1);
 }
 
 
 TEST(TStack, check_void) {
-    TStruct<int>* s = new TStack<int>;
+    TStack<int>* s = new TStack<int>;
     EXPECT_EQ(true, s->isEmpty());
 }
 TEST(TStack, check_fullness) {
-    TStruct<int>* s = new TStack<int>(1);
+    TStack<int>* s = new TStack<int>(1);
     s->push(3);
     EXPECT_EQ(true, s->isFull());
 }
