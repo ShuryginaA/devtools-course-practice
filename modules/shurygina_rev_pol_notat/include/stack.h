@@ -76,7 +76,7 @@ class TQueue {
     int first;
     int last;
  public:
-    TQueue(int _N = 100);
+    explicit TQueue(int _N = 100);
     TQueue(const TQueue& v);
     ~TQueue();
     void push(T v);
