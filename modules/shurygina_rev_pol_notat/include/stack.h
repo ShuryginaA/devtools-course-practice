@@ -127,7 +127,7 @@ bool TQueue<T>::isEmpty() {
 }
 
 template<class T>
-TQueue<T>::TQueue(int _N) {
+TQueue<T>::TQueue(int _N) :N(_N) {
     N = _N;
     mem = new T[N];
     first = 0;

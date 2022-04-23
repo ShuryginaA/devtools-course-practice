@@ -16,6 +16,11 @@ TEST(TQueue, can_create_queue_with_positive_length) {
     EXPECT_EQ(s->isEmpty(), true);
 }
 
+TEST(TQueue, can_create) {
+    TQueue<int>* s = new TQueue<int>;
+    ASSERT_NO_THROW(TQueue<int> s());
+}
+
 TEST(TQueue, can_create_copied_queue) {
     TQueue<int>* s = new TQueue<int>;
 
