@@ -6,6 +6,8 @@
 #include "include/stack.h"
 
 TEST(Lexem, can_create) {
+    Lexem* l = new Lexem();
+    Lexem l1("/", op, -1);
     ASSERT_NO_THROW(new Lexem("/", op, -1));
     ASSERT_NO_THROW(new Lexem("5", value, 5));
 }

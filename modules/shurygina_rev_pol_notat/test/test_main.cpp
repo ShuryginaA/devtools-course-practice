@@ -11,9 +11,9 @@ TEST(TQueue, can_pop) {
 }
 
 TEST(TQueue, can_create_queue_with_positive_length) {
-    TQueue<int> k(5);
+    TQueue<int>* s = new TQueue<int>;
     ASSERT_NO_THROW(TQueue<int> s(5));
-    EXPECT_EQ(k.isEmpty(), true);
+    EXPECT_EQ(s->isEmpty(), true);
 }
 
 TEST(TQueue, can_create_copied_queue) {

@@ -76,7 +76,7 @@ class TQueue {
     int first;
     int last;
  public:
-    explicit TQueue(int _N = 100);
+    TQueue(int _N = 100);
     TQueue(const TQueue& v);
     ~TQueue();
     void push(T v);
@@ -127,7 +127,7 @@ bool TQueue<T>::isEmpty() {
 }
 
 template<class T>
-inline TQueue<T>::TQueue(int _N) {
+TQueue<T>::TQueue(int _N) {
     N = _N;
     mem = new T[N];
     first = 0;
