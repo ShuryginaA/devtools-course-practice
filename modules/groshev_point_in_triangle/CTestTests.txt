@@ -49,7 +49,7 @@ set_tests_properties (${prefix}_Can_Check_True1 PROPERTIES
 
 add_test(
     NAME ${prefix}_Can_Check_False
-    COMMAND ${APPLICATION} -3 0 3 0 0 3 0 5
+    COMMAND ${APPLICATION} 7 7 11 1 2 2 12 3
 )
 
 set_tests_properties (${prefix}_Can_Check_True1 PROPERTIES
