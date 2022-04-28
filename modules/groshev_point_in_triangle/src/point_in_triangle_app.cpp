@@ -49,17 +49,9 @@ operator()(int argc, const char** argv) {
 }
 
 int PointInTriangleApplication::parseArgument(const char* arg) {
-    if (!checkArgument(arg))
-        throw std::runtime_error("Error occured: Wrong argument type.");
     return std::stoi(arg);
 }
 
-bool PointInTriangleApplication::checkArgument(const std::string& str) {
-    for (size_t i = 0; i < str.size(); i++) {
-        if (str[i] < '0' || str[i] > '9')
-            return false;
-    }
-    return true;
-}
+
 
 
