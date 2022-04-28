@@ -12,8 +12,8 @@
 PointInTriangleApplication::PointInTriangleApplication() { printf("%s\n", ""); }
 
 std::string PointInTriangleApplication::getHelp(const std::string& appname) {
-    return "This is a service" + appname + "which help you to find out\n"
-        + "wheather the point is in triangle or not. Test";
+    return  "This is a service which help you to find out\n"
+            "wheather the point is in triangle or not.";
 }
 
 bool PointInTriangleApplication::
