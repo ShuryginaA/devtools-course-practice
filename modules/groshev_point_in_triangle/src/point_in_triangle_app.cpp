@@ -17,15 +17,9 @@ std::string PointInTriangleApplication::getHelp(const std::string& appname) {
             "wheather the point is in triangle or not.";
 }
 
-bool PointInTriangleApplication::
-IsPointInTriangle(Triangle t, Point currentPoint) {
-    return false;
-}
-
 std::string PointInTriangleApplication::
 operator()(int argc, const char** argv) {
-    int a, b;
-
+    bool result;
     if (argc == 1)
         return getHelp(argv[0]);
 
@@ -38,16 +32,20 @@ operator()(int argc, const char** argv) {
             std::string error_msg = "Error occured: Should be more arguments.";
             throw std::runtime_error(error_msg);
         }
-        a = parseArgument(argv[1]);
-        b = parseArgument(argv[2]);
+        Point a(parseArgument(argv[1]), parseArgument(argv[2]));
+        Point b(parseArgument(argv[3]), parseArgument(argv[4]));
+        Point c(parseArgument(argv[5]), parseArgument(argv[6]));
+        Point x(parseArgument(argv[7]), parseArgument(argv[8]));
+        Triangle tr(a, b, c);
+        result = tr.IsPointInTriangle(tr, x);
     }
     catch (std::exception& exp) {
         return exp.what();
     }
-
-    std::ostringstream oss;
-    oss << a << " " << b;
-    return oss.str();
+    if (result)
+        return "True";
+    else
+        return "False";
 }
 
 int PointInTriangleApplication::parseArgument(const char* arg) {

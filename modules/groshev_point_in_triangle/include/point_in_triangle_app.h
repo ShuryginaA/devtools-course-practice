@@ -14,7 +14,6 @@ int parseArgument(const char* arg);
 PointInTriangleApplication();
 std::string operator()(int argc, const char** argv);
 std::string getHelp(const std::string& appname);
-static bool IsPointInTriangle(Triangle t, Point currentPoint);
 };
 
 #endif  // MODULES_GROSHEV_POINT_IN_TRIANGLE_INCLUDE_POINT_IN_TRIANGLE_APP_H_
