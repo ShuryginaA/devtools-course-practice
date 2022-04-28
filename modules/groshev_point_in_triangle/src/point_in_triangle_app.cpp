@@ -31,14 +31,12 @@ operator()(int argc, const char** argv) {
     try {
         if (argc > 15) {
             std::string error_msg = "Error occured: ";
-            error_msg += "Should be 4 Points as arguments.\n"
-                "You entered more or incorrect.\n";
+            error_msg += "Error occured : Should be less arguments.";
             throw std::runtime_error(error_msg);
         }
         if (argc < 15) {
             std::string error_msg = "Error occured: ";
-            error_msg += "Should be 4 Points as arguments.\n"
-                "You entered less or incorrect.\n";
+            error_msg += "Error occured : Should be more arguments.";
             throw std::runtime_error(error_msg);
         }
         a = parseArgument(argv[1]);

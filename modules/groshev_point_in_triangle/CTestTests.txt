@@ -22,19 +22,19 @@ set_tests_properties (${prefix}_can_Print_Help_Without_Arguments PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_Ñan_Check_1_Argument
+    NAME ${prefix}_can_Check_1_Argument
     COMMAND ${APPLICATION} 1
 )
 
-set_tests_properties (${prefix}_Ñan_Check_1_Argument PROPERTIES
+set_tests_properties (${prefix}_can_Check_1_Argument PROPERTIES
     PASS_REGULAR_EXPRESSION "Error occured: Should be more arguments."
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_Ñan_Check_9_Arguments
+    NAME ${prefix}_can_Check_9_Arguments
     COMMAND ${APPLICATION} 1 2 3 4 5 6 7 8 9
 )
 
-set_tests_properties (${prefix}_Ñan_Check_1_Argument PROPERTIES
+set_tests_properties (${prefix}_can_Check_1_Argument PROPERTIES
     PASS_REGULAR_EXPRESSION "Error occured: Should be less arguments."
     LABELS "${MODULE}")
