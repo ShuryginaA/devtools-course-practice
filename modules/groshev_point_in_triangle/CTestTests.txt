@@ -52,6 +52,6 @@ add_test(
     COMMAND ${APPLICATION} 7 7 11 1 2 2 12 3
 )
 
-set_tests_properties (${prefix}_Can_Check_True1 PROPERTIES
+set_tests_properties (${prefix}_Can_Check_False PROPERTIES
     PASS_REGULAR_EXPRESSION "False"
     LABELS "${MODULE}")
