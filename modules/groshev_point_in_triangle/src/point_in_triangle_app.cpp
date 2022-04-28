@@ -25,11 +25,11 @@ operator()(int argc, const char** argv) {
 
     try {
         if (argc > 8) {
-            std::string error_msg = "Error occured: Should be less arguments.";
+            std::string error_msg = "Error occured: Should be less arguments."+ argc;
             throw std::runtime_error(error_msg);
         }
         if (argc < 8) {
-            std::string error_msg = "Error occured: Should be more arguments.";
+            std::string error_msg = "Error occured: Should be more arguments."+ argc;
             throw std::runtime_error(error_msg);
         }
         Point a(parseArgument(argv[1]), parseArgument(argv[2]));
@@ -50,7 +50,7 @@ operator()(int argc, const char** argv) {
 
 int PointInTriangleApplication::parseArgument(const char* arg) {
     if (!checkArgument(arg))
-        throw std::runtime_error("Error occured: Wrong argument type.\n");
+        throw std::runtime_error("Error occured: Wrong argument type.");
     return std::stoi(arg);
 }
 
