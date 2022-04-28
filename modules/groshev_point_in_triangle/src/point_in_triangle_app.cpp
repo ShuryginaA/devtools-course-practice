@@ -30,11 +30,11 @@ operator()(int argc, const char** argv) {
         return getHelp(argv[0]);
 
     try {
-        if (argc > 15) {
+        if (argc > 8) {
             std::string error_msg = "Error occured: Should be less arguments.";
             throw std::runtime_error(error_msg);
         }
-        if (argc < 15) {
+        if (argc < 8) {
             std::string error_msg = "Error occured: Should be more arguments.";
             throw std::runtime_error(error_msg);
         }
