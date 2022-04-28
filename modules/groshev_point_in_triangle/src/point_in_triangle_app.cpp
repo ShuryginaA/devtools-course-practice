@@ -25,13 +25,11 @@ operator()(int argc, const char** argv) {
 
     try {
         if (argc > 8) {
-        std::string error_msg = "Error occured: \n"
-            "Should be less arguments."+ argc;
+         std::string error_msg = "Error occured: Should be less arguments.";
             throw std::runtime_error(error_msg);
         }
         if (argc < 8) {
-            std::string error_msg = "Error occured: \n"
-                "Should be more arguments."+ argc;
+         std::string error_msg = "Error occured: Should be more arguments.";
             throw std::runtime_error(error_msg);
         }
         Point a(parseArgument(argv[1]), parseArgument(argv[2]));
