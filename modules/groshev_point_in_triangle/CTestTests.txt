@@ -46,3 +46,12 @@ add_test(
 set_tests_properties (${prefix}_Can_Check_True1 PROPERTIES
     PASS_REGULAR_EXPRESSION "True"
     LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Check_False
+    COMMAND ${APPLICATION} -3 0 3 0 0 3 0 5
+)
+
+set_tests_properties (${prefix}_Can_Check_True1 PROPERTIES
+    PASS_REGULAR_EXPRESSION "False"
+    LABELS "${MODULE}")
