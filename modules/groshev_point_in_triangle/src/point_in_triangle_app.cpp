@@ -12,7 +12,8 @@
 PointInTriangleApplication::PointInTriangleApplication() { printf("%s\n", ""); }
 
 std::string PointInTriangleApplication::getHelp(const std::string& appname) {
-    return  "This is a service which help you to find out\n"
+    return  "Application started!" \
+            "This is a service which help you to find out\n"
             "wheather the point is in triangle or not.";
 }
 
@@ -30,13 +31,11 @@ operator()(int argc, const char** argv) {
 
     try {
         if (argc > 15) {
-            std::string error_msg = "Error occured: ";
-            error_msg += "Error occured : Should be less arguments.";
+            std::string error_msg = "Error occured: Should be less arguments.";
             throw std::runtime_error(error_msg);
         }
         if (argc < 15) {
-            std::string error_msg = "Error occured: ";
-            error_msg += "Error occured : Should be more arguments.";
+            std::string error_msg = "Error occured: Should be more arguments.";
             throw std::runtime_error(error_msg);
         }
         a = parseArgument(argv[1]);
