@@ -38,18 +38,9 @@ set_tests_properties (${prefix}_can_Check_9_Arguments PROPERTIES
     PASS_REGULAR_EXPRESSION "Error occured: Should be less arguments."
     LABELS "${MODULE}")
 
-add_test(
-    NAME ${prefix}_can_Check_5_Arguments
-    COMMAND ${APPLICATION} 1 2 3 4 5
-)
-
-set_tests_properties (${prefix}_can_Check_5_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "Error occured: Should be less arguments."
-    LABELS "${MODULE}")
-
     add_test(
     NAME ${prefix}_Can_Check_Format_Wrong_Type_1
-    COMMAND ${APPLICATION} a 5 7 5 3 8 2 7
+    COMMAND ${APPLICATION} 5 7 5 3 8 2 7 a
 )
 
 set_tests_properties (${prefix}_Can_Check_Format_Wrong_Type_1 PROPERTIES
@@ -58,7 +49,7 @@ set_tests_properties (${prefix}_Can_Check_Format_Wrong_Type_1 PROPERTIES
 
 add_test(
     NAME ${prefix}_Can_Check_Format_Wrong_Type_2
-    COMMAND ${APPLICATION} 6 5 6 + 8 9 4 0
+    COMMAND ${APPLICATION} 6 5 6 8 9 4 0 +
 )
 
 set_tests_properties (${prefix}_Can_Check_Format_Wrong_Type_2 PROPERTIES
